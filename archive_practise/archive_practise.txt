@@ -1,0 +1,120 @@
+# Start typescript
+
+$ script ~/pr0j/schule/bsnw/archive_practise.script
+
+#######################################
+# Create the dirs
+
+$ mkdir v1  v2
+
+#######################################
+# Change to v1
+
+$ cd v1
+
+#######################################
+# Create the files
+
+$ chentropy </dev/urandom| head -n 200 | x touch
+$ for f in *; do echo "Das ist eine Zeile"> "$f"; done
+$ for f in *; do date>> "$f"; done
+
+#######################################
+# Do the next dir
+
+$ ../v2
+$ chentropy </dev/urandom| head -n 200 | while read f; do chentropy </dev/urandom|head -n 20 > "$f"; done
+
+#######################################
+# Create the archives
+
+$ ..
+
+$ tar -cf v1.tar v1
+$ tar -cf v2.tar v2
+
+$ <v1.tar gzip -c > v1.tar.gz
+$ <v2.tar gzip -c > v2.tar.gz
+
+$ <v2.tar bzip2 -c > v2.tar.bz2
+$ <v1.tar bzip2 -c > v1.tar.bz2
+
+$ <v1.tar zip - - > v1.tar.zip
+$ <v2.tar zip - - > v2.tar.zip
+
+#######################################
+# Extract stuff
+
+$ mkdir v{1,2}_ext
+
+$ tar -xf v1.tar -C ext
+$ tar -xf v2.tar -C ext
+
+$ <v1.tar.bz2 >ext/v1_bz2.tar bzip2 -cd
+$ <v2.tar.bz2 >ext/v2_bz2.tar bzip2 -cd
+
+$ <v2.tar.gz >ext/v2_gz.tar gzip -cd
+$ <v1.tar.gz >ext/v1_gz.tar gzip -cd
+
+$ >ext/v1_zip.tar unzip -p v1.tar.zip
+$ >ext/v2_zip.tar unzip -p v2.tar.zip
+
+#######################################
+# Get sizes
+
+$ du -ha . * ext/* | grep -v '/v[12]/.*'
+212K	./ext/v2_zip.tar
+212K	./ext/v1_zip.tar
+212K	./ext/v1_gz.tar
+212K	./ext/v2_gz.tar
+212K	./ext/v2_bz2.tar
+212K	./ext/v1_bz2.tar
+800K	./ext/v2
+800K	./ext/v1
+2.9M	./ext
+76K	./v2.tar.zip
+8.0K	./v1.tar.zip
+8.0K	./v1.tar.bz2
+72K	./v2.tar.bz2
+76K	./v2.tar.gz
+8.0K	./v1.tar.gz
+212K	./v2.tar
+212K	./v1.tar
+800K	./v2
+800K	./v1
+5.1M	.
+
+#######################################
+# What chentropy does
+
+$ </dev/urandom chentropy|head -n 30
+uyDxa99ReIT2Gztv18dMTM1u7n6PbHOdbT9MW
+30Y0NCRXNzCkaHjBLcnRcw3Da87cwc2
+fWfd1Fmb
+siOdsKWDLvh
+FvVqcw83fbETVWO5FW2HdumE7
+nFGpFdgP
+3TvN3FxGIH9npknrbQK6
+MBwmas1DIgRw2qDB10M3HzVf1m5
+OWK2hCtzRj7fxckV0qxlQwf8tky005D8mB9MHc
+oTaFWqQNbIViyhSsKArE6WiOlYZw
+cu2wCGrObVMaBVkG8
+svDEOSs8RmChBQypWFBiNJe9Xtn2HxrmnsSYns
+VQFhWswJo99
+zaEnCLVETJs1WhfxPcL
+0nvW1y8dUGiNtHoddCeBKRR0aWuPbq
+ujsPe3xtdHSTz3vzl
+E9kiROSMXBioN17w5wYTyccRwCJqPy5DAx0d
+Rdtq0AXbdOcDUI3vG
+vVDlhXqjettPWTBxCl2ZEr9LjT93MEAeOv7dK
+7C0rvAWZj2PKA21rbiXE8MXtcfFHGr
+zq7ThkUDhIV
+q7eL6gXszDa
+cS9przG
+cHTtSUfr2cC8iSQwdo5duv
+ScSN94ZRMuyIH4uyMzEdfvSGFFw5S5T8Gpbc
+ekzSZmgrdpQjft4R
+5AbV5kGUuexcBX1z6PXm7sO7Vs3oFcp
+r4IMIMQQK0mqOssCu38iKkhsOvo0dSmh
+ImBn6Ax2vpFL54zdSEc
+cQzpD5S0Ab6u

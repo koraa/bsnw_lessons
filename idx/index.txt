@@ -1,0 +1,111 @@
+17.9.2012
+
+Einführung,Regeln
+Zahlensysteme (Dezima, Hexadezimal, Dual)
+Stellwerte
+Umrechnung
+
+20.9.2012
+
+Cisco Corriculum
+
+24.9.2012
+
+Umwandlung zwischen Zahlensystemen
+SI-Prefixe
+Datenmengen
+Datenmengen Übersicht
+Übung Zahlensysteme 
+Eingabe/Verarbeitung/Ausgabe
+
+25.10.2012
+
+Operating System
+
+1.10.2012
+
+Festplatten/Addressierung
+Partitionierung
+Übung MBR
+Virtualisierung
+
+ASCII
+ISO-8959-1
+Latin-9
+UTF8
+
+9.10.2012
+
+Prozesse/Threads/Prozessspeicher
+
+15.10.2012
+
+Scheduling
+Linux: Shell Grundlagen
+
+Netzwerke: LAN (& WAN)
+
+
+16.10.2012
+
+Linux: Files & Folders
+
+17.10.2012
+
+Netzwerke: MAC-Addressen
+Linux: Textdateien
+Virtual Box Netzwerkbrücke
+SSH-Server
+Linux: Übung - Dateien und Verzeichnisse
+Netzwerke: IPv4 Addressen
+
+18.10.2012
+
+Netzwerke: Übung IPv4
+Linux: Übung - Dateien und Verzeichnisse
+
+6.11.2012
+
+Netzwerke: Netzklassen
+
+12.11.2012
+
+Linux: Benutzer Konfiguration
+Linux: Files/Permissions
+Netzwerke: Private Netze
+
+13.11.2012
+
+Netzwerke: Komponenten
+
+19.11.2012
+
+Netzwerke: Standarts Für LAN
+
+20.1.2012:
+Netzwerke: Collison Domain
+Netzwerke: Broadcast DOmain
+Netzwerke: ARP
+Netzwerke: Routing Tabellen
+Linux:     Umask
+
+27.11.2012
+Netzwerke: IntegratedServiceRouter
+Netzwerke: DNS
+Netzwerke: DHCP
+Netzwerke: Internet (ISP/POP/ISI/Connectivität)
+
+31.11.2012
+Linux: Filesysteme
+
+10.12.2012
+Netzwerke: OSI
+Linux: MANpages
+Netzwerke: TCP/IP Modell vs OSI
+Netzwerke: DNS Übung
+
+22.1.2012
+Linux: Bash (Escaping/Substitution)
+
+29.1.2012
+Netzwerke: Routing

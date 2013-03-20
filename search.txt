@@ -1,0 +1,309 @@
+Auhor: Michael Varner
+
+###################################################
+# install locate
+
+$ sudo apt-get install locate && updatedb
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following NEW packages will be installed:
+  locate
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 151 kB of archives.
+After this operation, 332 kB of additional disk space will be used.
+Get:1 http://ftp.de.debian.org/debian/ squeeze/main locate i386 4.4.2-1+b1 [151 kB]
+Fetched 151 kB in 0s (505 kB/s)
+Selecting previously deselected package locate.
+Unpacking locate (from .../locate_4.4.2-1+b1_i386.deb) ...
+Processing triggers for man-db ...
+locale: Cannot set LC_CTYPE to default locale: No such file or directory
+locale: Cannot set LC_MESSAGES to default locale: No such file or directory
+locale: Cannot set LC_ALL to default locale: No such file or directory
+Setting up locate (4.4.2-1+b1) ...
+
+###################################################
+# Find passwd
+
+$ locate passwd
+/etc/cron.daily/passwd
+/etc/pam.d/chpasswd
+/etc/pam.d/passwd
+/etc/passwd
+/etc/passwd-
+/etc/security/opasswd
+/usr/bin/gpasswd
+/usr/bin/grub-mkpasswd-pbkdf2
+/usr/bin/passwd
+
+###################################################
+# Find group normal
+
+$ sudo find / -group normal
+/home/normal
+/home/normal/.bash_logout
+/home/normal/.profile
+/home/normal/.pwd.lock
+/home/normal/.bashrc
+/home/normal/.java
+/home/normal/.java/.systemPrefs
+/home/normal/.java/.systemPrefs/.systemRootModFile
+/home/normal/.java/.systemPrefs/.system.lock
+/var/lib/sudo/normal
+
+###################################################
+# Find user root AND Group normal
+
+$ sudo find / -group normal -and -user root
+find: `/proc/2957/task/2957/fd/5': No such file or directory
+find: `/proc/2957/task/2957/fdinfo/5': No such file or directory
+find: `/proc/2957/fd/5': No such file or directory
+find: `/proc/2957/fdinfo/5': No such file or directory
+/var/lib/sudo/normal
+
+################################################################
+#
+# Text durchsuchen
+#
+################################################################
+
+###################################################
+#  Suche in file nach "king"
+
+$ </usr/share/dict/words grep 'king'
+Buckingham
+Elektronikingenieur
+Multitasking
+Peking
+Pekinger
+Pekingerin
+Pekingerinnen
+Pekingern
+Pekingers
+Pekings
+
+###################################################
+# Zeilen, die mit king beginnen
+
+$ </usr/share/dict/words grep '^king'
+
+###################################################
+# 3,5,7=a
+
+$ </usr/share/dict/words grep '^..a.a.a'
+Granatapfel
+Granatapfels
+Guayana
+Niagarafälle
+Niagarafällen
+
+###################################################
+# Enden auf zz
+
+$ </usr/share/dict/words grep 'zz$'
+Freejazz
+Jazz
+
+###################################################
+#haben 4 f
+
+$ </usr/share/dict/words grep -P '(f.*){4}'
+Angriffswaffen
+Dampfschifffahrt
+Elfmeterpfiff
+Kaffeelöffel
+Kaffeelöffeln
+Koffergriff
+Luftschifffahrt
+Luftwaffenchef
+Offensivangriff
+Schifffahrtsfragen
+
+###################################################
+# Keine vokale
+
+$ </usr/share/dict/words grep -Piv '[aeiou]'
+BBC
+BGB
+BGH
+BGHSt
+BGS
+BH
+BLZ
+BMW
+BND
+BP
+BRD
+
+###################################################
+# Genau Haus
+
+$ </usr/share/dict/words grep -P '^Haus$'
+Haus
+
+###################################################
+# Keine sonderzeichen + faengt mit fas an
+
+$ </usr/share/dict/words grep -P '^fas\w*$'|head
+faschistisch
+faschistische
+faschistischem
+faschistischen
+faschistischer
+faschistisches
+fasele
+faseln
+faselnd
+
+###################################################
+# 3 Buchstaben lang
+
+$ </usr/share/dict/words grep -P '^.{3}$'|head
+ABC
+ABM
+ACL
+AEG
+AGP
+AIX
+AKW
+AMD
+AOK
+AOL
+
+####################################################
+# Genau 2mal dem selben buchstaben an
+
+$ </usr/share/dict/words grep -P '^(.)\1$'|head
+II
+ff
+mm
+
+####################################################
+# Endet mit 2 mal dem selben buchstaben
+
+$ </usr/share/dict/words grep -P '(.)\1$'|head
+ASCII
+Abb
+Abbaufortschritt
+Abendblatt
+Abendprogramm
+Abfall
+Abfluss
+Abgott
+Abguss
+Ablass
+
+#####################################################
+# Endet und faengt mit a an
+
+
+$ </usr/share/dict/words grep '^a.*a$'
+acta
+alpha
+altrosa
+
+#####################################################
+# 2 shc
+
+
+$ </usr/share/dict/words grep 'sch.*sch'|head
+Abschiedsgeschenk
+Abschiedsgeschenke
+Abschiedsgeschenken
+Abschiedsgeschenks
+Abschiedsschmerz
+Abschiedsschmerze
+Abschiedsschmerzen
+Abschiedsschmerzes
+Abschlussschnitt
+Abschlussschnitten
+
+#################################################
+# Nur zahlen
+
+
+$ </usr/share/dict/words grep '^[0-9]*$'|head
+
+#################################################
+# Nur spaces
+
+
+$ </usr/share/dict/words grep '^\s*$'|head
+
+#################################################
+# nur CAPS
+
+
+$ </usr/share/dict/words grep '^[A-Z]*$'|head
+ABC
+ABM
+ACL
+ACPI
+ADAC
+ADSL
+AEG
+AG
+AGP
+AI
+
+#################################################
+# Faengt mit vokal an, endet mit keinem
+
+
+$ </usr/share/dict/words grep '^[aeiou].*[^aeiou]$'|head
+aal
+aalen
+aalend
+aalendem
+aalenden
+aalender
+aalendes
+aalglatt
+aalglattem
+aalglatten
+
+#################################################
+# At least five chars
+
+$ </usr/share/dict/cracklib-small grep '.{5}.+'|head
+
+#################################################
+# an 'sch'
+
+$ </usr/share/dict/cracklib-small grep 'sch'|head
+aeschylus
+auschwitz
+bausch
+bosch
+busch
+discharge
+discharged
+discharges
+discharging
+escheat
+
+#################################################
+# At least one special character
+
+$ </usr/share/dict/cracklib-small grep -i '[^a-z0-9\w\n]'|head
+abbey's
+abbot's
+abdomen's
+abduction's
+abductor's
+ability's
+abode's
+abolishment's
+aborigine's
+abortion's
+
+#################################################
+# An uppercase letter not as char 0
+
+$ </usr/share/dict/cracklib-small grep '.+[A-Z]'|head
+
+#################################################
+# At least three nums
+
+$ </usr/share/dict/cracklib-small grep '[0-9]{3}'|head
