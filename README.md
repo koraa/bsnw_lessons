@@ -1,8 +1,8 @@
 OS and Network Lessons
 ======================
 
-(BetriebsSysteme & NetzwWerke)
+(BetriebsSysteme & NetzWerke)
 
 This repository contains my digital material for the OS/Net lessons at School.
 
-To test some of the commands you might reguire *chentropy* (https://github.com/mappleconfusers/chentropy)
+To test some of the commands you might require *chentropy* (https://github.com/mappleconfusers/chentropy)
